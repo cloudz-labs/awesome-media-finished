@@ -1,0 +1,25 @@
+zuul:
+  ignored-services: "*"
+  routes:
+    awesome-media-backend:
+      path: /awesome-media/**
+      url: http://localhost:8090
+    ribbon-test:
+      path: /ribbon-test/**  
+ 
+
+ribbon-test:
+  ribbon:
+    listOfServers: google.com, naver.com
+
+
+server:
+  port: 9999
+  
+spring:
+  application:
+    name: awesome-media-apigateway
+
+management:
+  security:
+    enabled: false 

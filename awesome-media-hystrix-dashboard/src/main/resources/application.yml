@@ -1,0 +1,10 @@
+server:
+  port: 7979
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: awesome-media-hystrix-dashboard
