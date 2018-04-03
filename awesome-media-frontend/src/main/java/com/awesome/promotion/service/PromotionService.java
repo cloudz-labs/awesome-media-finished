@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.awesome.contents.vo.Content;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service("promotionService")
 public class PromotionService {
@@ -21,12 +20,8 @@ public class PromotionService {
 		this.restTemplate = restTemplate;
 	}
 	
-	@HystrixCommand(fallbackMethod = "getPromotionFallBack")
 	public Content getPromotion() {
 		return restTemplate.getForObject(String.format("%s/v1/promotions", serviceUrl), Content.class);
     }
 	
-	public Content getPromotionFallBack() {
-		return new Content();
-    }
 }

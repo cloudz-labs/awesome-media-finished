@@ -1,6 +1,5 @@
 package com.awesome.category.service;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.awesome.category.vo.Category;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service("categoryService")
 public class CategoryService {
@@ -25,22 +23,12 @@ public class CategoryService {
 	@Value("${api.services.url}")
 	private String serviceUrl;
 	
-	@HystrixCommand(fallbackMethod = "getCategoryListFallBack")
 	public List<Category> getCategoryList() {
 		return Arrays.asList(restTemplate.getForObject(String.format("%s/v1/categories", serviceUrl), Category[].class));
     }
 	
-	public List<Category> getCategoryListFallBack() {
-		return new ArrayList<Category>();
-	}
-	
-	@HystrixCommand(fallbackMethod = "getCategoryFallBack")
 	public Category getCategory(String id) {
 		return restTemplate.getForObject(String.format("%s/v1/categories/%s", serviceUrl, id), Category.class);
     }
-	
-	public Category getCategoryFallBack(String id) {
-		return new Category();
-	}
 	
 }

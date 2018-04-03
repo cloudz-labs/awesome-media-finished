@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.awesome.profile.vo.Profile;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service("profileService")
 public class ProfileService {
@@ -24,7 +23,6 @@ public class ProfileService {
 		this.restTemplate = restTemplate;
 	}
 	
-	@HystrixCommand
 	public List<Profile> getProfiles(String username) {
 		return Arrays.asList(restTemplate.getForObject(String.format("%s/v1/%s/profiles", serviceUrl, username), Profile[].class));
     }
