@@ -1,0 +1,6 @@
+server:
+  port: 6379
+
+spring:
+  application:
+    name: awesome-media-discovery-service

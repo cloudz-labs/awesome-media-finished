@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.awesome</groupId>
-	<artifactId>awesome-media-apigateway</artifactId>
-	<version>0.0.1.SNAPSHOT</version>
+	<artifactId>awesome-media-discovery-service</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>awesome-media-apigateway</name>
-	<description>Demo project for API Gateway</description>
+	<name>awesome-media-discovery-service</name>
+	<description>Demo project for Discovery Service</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -27,16 +27,8 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zuul</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
 
 		<dependency>
@@ -66,6 +58,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
