@@ -10,12 +10,3 @@ spring:
     name: awesome-media-frontend    
   thymeleaf:
     prefix: classpath:/static/html/
-    
-hystrix:
-  command: 
-    default:
-      execution: 
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-            
