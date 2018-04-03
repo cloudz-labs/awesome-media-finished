@@ -1,5 +1,5 @@
 api:
   bff:
     path: /
-  services:
+  services: 
     url: http://awesome-media-backend-service:8090
