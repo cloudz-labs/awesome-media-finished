@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: awesome-media-dev
+  datasource:
+    initialize: true
+    platform: mysql
+    url: jdbc:mysql://${AWESOME_MEDIA_DB_SERVICE_HOST}:${AWESOME_MEDIA_DB_SERVICE_PORT}/${MYSQL_DATABASE}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}

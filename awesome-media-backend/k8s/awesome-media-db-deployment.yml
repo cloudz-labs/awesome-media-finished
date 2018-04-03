@@ -1,0 +1,41 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: awesome-media-db-deployment
+  labels:
+    app: awesome-media-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awesome-media-db
+  template:
+    metadata:
+      labels:
+        app: awesome-media-db
+    spec:
+      containers:
+      - name: awesome-media-db
+        image: mariadb
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
+        - name: MYSQL_DATABASE
+          value: db_example
+        - name: MYSQL_PASSWORD
+          value: ThePassword
+        - name: MYSQL_USER
+          value: springuser
+        args: 
+          - "--character-set-server=utf8mb4"
+          - "--collation-server=utf8mb4_unicode_ci"     
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

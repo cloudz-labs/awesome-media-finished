@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: awesome-media-localhost
+  datasource:
+    initialize: true
+    platform: h2
+    url: jdbc:h2:mem:mediadb;
+    username: sa
+    password: null
+  h2:
+    console:
+      enabled: true
+    

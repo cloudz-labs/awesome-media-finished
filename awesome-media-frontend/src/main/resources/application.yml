@@ -1,0 +1,21 @@
+server:
+  port: ${PORT:8080}
+  
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: awesome-media-frontend    
+  thymeleaf:
+    prefix: classpath:/static/html/
+    
+hystrix:
+  command: 
+    default:
+      execution: 
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+            

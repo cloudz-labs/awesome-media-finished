@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: awesome-media-backend-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: skhynix.icp.ghama.io
+    http:
+      paths:
+        - path: /hello-world
+          backend:
+            serviceName: gs-spring-boot-docker-service
+            servicePort: 8080
+        - path: /awesome-media
+          backend: 
+            serviceName: awesome-media-backend-service
+            servicePort: 8090
