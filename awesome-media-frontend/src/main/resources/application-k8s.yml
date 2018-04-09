@@ -2,4 +2,4 @@ api:
   bff:
     path: /
   services: 
-    url: http://awesome-media-backend-service:8090
+    url: http://${AWESOME_MEDIA_BACKEND_SERVICE_HOST}:${AWESOME_MEDIA_BACKEND_SERVICE_PORT}
